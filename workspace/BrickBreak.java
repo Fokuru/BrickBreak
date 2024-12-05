@@ -175,6 +175,16 @@ public class BrickBreak extends JPanel implements KeyListener, ActionListener {
 			ball.reverseY();
 		}
 
+		// Added this so that the paddle will bounce on walls - Raley Wilkin
+		if (player.getX() < 10 || player.getX()+player.getWidth() > 672) {
+			player.reverseVelocity();
+			if (player.getVelocity()>0) {
+				player.setVelocity(1);
+			} else {
+				player.setVelocity(-1);
+			}
+		}
+
 
 	}
 
@@ -207,16 +217,16 @@ public class BrickBreak extends JPanel implements KeyListener, ActionListener {
 		if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
 			play = true;
 			if (player.getVelocity() == 0)
-				player.addVelocity(8);
+				player.addVelocity(2);
 			else {
-				player.addVelocity(4);
+				player.addVelocity(1);
 			}
 		} else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
 			play = true;
 			if (player.getVelocity() == 0)
-				player.addVelocity(-8);
+				player.addVelocity(-2);
 			else {
-				player.addVelocity(-4);
+				player.addVelocity(-1);
 			}
 		}
 
