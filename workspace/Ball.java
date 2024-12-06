@@ -17,9 +17,9 @@ public class Ball {
 
 	//Constructor:
 	public Ball(int x, int y, int radius) {
-		this.radius = radius;
 		this.x = x;
 		this.y = y;
+		this.radius = radius;
 	}
 
 	//methods:
